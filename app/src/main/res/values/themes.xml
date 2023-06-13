@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Trabajapp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Base.Theme.Trabajapp.myTheme">
+
+        <item name="colorPrimary">@color/accentLight</item>
+        <item name="colorSecondary">@color/accentLight</item>
+        <item name="colorAccent">@color/accentLight</item>
+
+
+        <item name="toolbarStyle">@style/myToolbarStyle</item>
+        <item name="cardViewStyle">@style/myCardStyle</item>
+
+    </style>
+
+    <style name="myToolbarStyle" parent="Widget.Material3.Toolbar">
+        <item name="android:background">@color/ToolbarBackgroundLight</item>
+        <item name="android:backgroundTint">@color/ToolbarBackgroundLight</item>
+        <item name="titleTextColor">@color/ToolbarTextLight</item>
+    </style>
+
+    <style name="ToolbarTextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/ToolbarTextLight</item>
+    </style>
+
+    <style name="myCardStyle" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/CardBackgroundLight</item>
+        <item name="android:textViewStyle">@style/cardTextStyle</item>
+    </style>
+
+    <style name="cardTextStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="myTextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/textColorPrimaryLight</item>
+    </style>
+
+</resources>

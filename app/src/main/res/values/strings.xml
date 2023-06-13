@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Trabajapp</string>
+    <string name="search_hint">Buscar trabajo</string>
+    <string name="categories">Categorías</string>
+    <string name="job_functions">Funciones</string>
+    <string name="job_desirables">Deseables</string>
+    <string name="job_description">Requerimientos</string>
+    <string name="open_in_browser">Abrir en el navagador</string>
+    <string name="save_job">Guardar</string>
+    <string name="remote">Remoto</string>
+    <string name="company_logo_description">Logo</string>
+</resources>

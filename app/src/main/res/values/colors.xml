@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="accentLight">#00c4f5</color>
+    <color name="accentDark">#0093d3</color>
+
+    <color name="ToolbarBackgroundLight">#FFFFFF</color>
+    <color name="ToolbarTextLight">#2b353b</color>
+
+    <color name="ToolbarBackgroundDark">#002e39</color>
+    <color name="ToolbarTextDark">#FFFFFF</color>
+
+    <color name="CardBackgroundLight">#FFFFFF</color>
+    <color name="CardBackgroundDark">#0f3942</color>
+
+    <color name="textColorPrimaryLight">#000000</color>
+    <color name="textColorPrimaryDark">#f2f6f7</color>
+</resources>

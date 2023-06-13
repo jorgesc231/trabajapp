@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".JobDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways|snap">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary">
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="18dp"
+            android:paddingTop="24dp">
+
+            <TextView
+                android:id="@+id/tvJobTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_horizontal"
+                style="@style/myTextViewStyle"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:text="Titulo oferta" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvCompany"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        tools:src="@drawable/ic_person"
+                        android:contentDescription="@string/company_logo_description" />
+
+                    <TextView
+                        android:id="@+id/tvCompanyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="16dp"
+                        android:textAlignment="center"
+                        style="@style/myTextViewStyle"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="Nombre Empresa" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipApplicants"
+                    style="@style/Widget.Material3.Chip.Assist.Elevated"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="false"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    app:chipIcon="@drawable/ic_person"
+                    tools:text="1000"
+                    app:chipIconTint="?attr/colorAccent"/>
+
+                <TextView
+                    android:id="@+id/tvPubDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    style="@style/myTextViewStyle"
+                    android:textStyle="bold"
+                    tools:text="12/06/23" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSeniority"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    style="@style/myTextViewStyle"
+                    tools:text="Seniority" />
+
+                <TextView
+                    android:id="@+id/tvModality"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    style="@style/myTextViewStyle"
+                    tools:text="Modalidad"/>
+
+                <TextView
+                    android:id="@+id/tvRemote"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    app:chipIcon="@drawable/ic_wifi"
+                    app:chipIconSize="18dp"
+                    style="@style/myTextViewStyle"
+                    tools:text="Remoto" />
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                style="@style/myTextViewStyle"
+                android:text="@string/job_functions" />
+
+            <TextView
+                android:id="@+id/tvFunctions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textIsSelectable="true"
+                style="@style/myTextViewStyle"
+                android:textSize="16sp"
+                tools:text="Funciones TextView" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                style="@style/myTextViewStyle"
+                android:text="@string/job_description" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                style="@style/myTextViewStyle"
+                android:textIsSelectable="true"
+                android:textSize="16sp"
+                tools:text="Descripcion TextView"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="16dp"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                style="@style/myTextViewStyle"
+                android:text="@string/job_desirables" />
+
+            <TextView
+                android:id="@+id/tvDesirable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/myTextViewStyle"
+                android:textSize="16sp"
+                android:textIsSelectable="true"
+                tools:text="Deseables TextView" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
