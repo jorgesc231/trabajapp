@@ -27,6 +27,7 @@ import com.example.trabajapp.JobDetailActivity.Companion.TITLE_KEY
 import com.example.trabajapp.databinding.ActivityMainBinding
 import com.example.trabajapp.JobListActivity.Companion.CATEGORIE_KEY
 import com.example.trabajapp.JobListActivity.Companion.NAME_KEY
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,6 +41,10 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var adapter : SearchAdapder
     private lateinit var categoriesAdapter : CategoriesAdapder
+
+    private val coroutineExceptionHandler = CoroutineExceptionHandler{ _, throwable ->
+        throwable.printStackTrace()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -99,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         binding.progressBar.isVisible = true
         binding.rvCategories.isVisible = false
 
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO + coroutineExceptionHandler).launch {
             val myResponse = retrofit.create(ApiService::class.java).getCategoriesList()
 
             if (myResponse.isSuccessful) {
@@ -129,7 +134,7 @@ class MainActivity : AppCompatActivity() {
         binding.tvCategories.text = "Trabajos en: \"" + query + "\""
 
         // Corrutinas
-        CoroutineScope(Dispatchers.IO).launch {
+        CoroutineScope(Dispatchers.IO + coroutineExceptionHandler).launch {
 
             // Lo que ejecutemos aqui se ejecutara en un hilo de I/O
             val myResponse = retrofit.create(ApiService::class.java).getJobs(query)
